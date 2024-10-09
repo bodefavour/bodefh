@@ -3,7 +3,6 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <section className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 h-screen flex justify-center items-center">
-      <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
       <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-6 text-center">
         {/* Profile Picture */}
         <div className="relative">
