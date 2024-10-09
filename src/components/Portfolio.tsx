@@ -4,12 +4,17 @@ const projects = [
   {
     title: 'Harmony Hub',
     description: 'A Christian music streaming platform built with Flutterflow and Firebase.',
-    link: '#',
+    link: 'https://bodefavour.github.io/Harmony-Hub-web/',
   },
   {
-    title: 'Skyflo Concept',
-    description: 'A gifting brand website featuring advanced interactions and parallax scrolling.',
-    link: '#',
+    title: 'Custom Printf',
+    description: 'Building a Custom Printf function in C programming language',
+    link: 'https://github.com/joshybobo/printf',
+  },
+{
+    title: '𝗣𝗿𝗼𝗷𝗲𝗰𝘁: 𝗔𝗶𝗿𝗯𝗻𝗯 𝗖𝗹𝗼𝗻𝗲 | 𝗔𝗟𝗫 𝗦𝗼𝗳𝘁𝘄𝗮𝗿𝗲 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴 𝗣𝗿𝗼𝗴𝗿𝗮𝗺:',
+    description: 'Building a Clone of the popular Airbnb Website page and adding basic functionalities ',
+    link: 'https://github.com/bodefavour/AirBnB_clone',
   },
   // Add more projects here
 ];
