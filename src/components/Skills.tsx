@@ -1,10 +1,11 @@
 import React from 'react';
 
 const skills = [
-  { name: 'JavaScript', level: 'Advanced' },
+  { name: 'JavaScript', level: 'Advanced' },{ name: 'C', level: 'Advanced' },
+{ name: 'Python', level: 'Advanced' },
   { name: 'TypeScript', level: 'Intermediate' },
   { name: 'React', level: 'Advanced' },
-  { name: 'TailwindCSS', level: 'Intermediate' },
+  { name: 'Tailw.CSS', level: 'Intermediate' },
   // Add more skills here
 ];
 
