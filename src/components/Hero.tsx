@@ -11,6 +11,7 @@ const Hero: React.FC = () => {
             alt="Favour's Profile"
             className="w-48 h-48 rounded-full border-4 border-white object-cover"
           />
+          </div>
       <div className="text-center text-white">
         <h1 className="text-6xl font-bold mb-4">Favour Bode</h1>
         <p className="text-2xl mb-8">Full-Stack Developer & Virtual Assistant</p>
@@ -21,6 +22,7 @@ const Hero: React.FC = () => {
           View My Work
         </a>
       </div>
+          </div>
     </section>
   );
 };
