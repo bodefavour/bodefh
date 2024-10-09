@@ -1,10 +1,10 @@
 import React from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Hero from './components/Hero.tsx';
+import About from './components/About.tsx';
+import Portfolio from './components/Portfolio.tsx';
+import Skills from './components/Skills.tsx';
+import Contact from './components/Contact.tsx';
+import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
   return (
