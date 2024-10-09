@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
         {/* Profile Picture */}
         <div className="relative">
           <img
-            src="/src/assets/images/Favour.jpg"
+            src="/src/Favour.jpg"
             alt="Favour's Profile"
             className="w-48 h-48 rounded-full border-4 border-white object-cover"
           />
