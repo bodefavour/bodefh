@@ -4,7 +4,7 @@ const projects = [
   {
     title: 'Harmony Hub',
     image: require('../assets/images/HarmonyHub.png'),
-    description: 'Developed Harmony Hub, a Christian music streaming mobile app using Flutter and Dart. The app provides users with a variety of Christian songs to stream, organized by genre and artist. You can download the app from the Harmony Hub Landing Page, which includes the app’s download link and additional information about the app's features.',
+    description: 'Developed Harmony Hub, a Christian music streaming mobile app using Flutter and Dart. The app provides users with a variety of Christian songs to stream, organized by genre and artist. You can download the app from the Harmony Hub Landing Page, which includes the app’s download link and additional information about the app features.',
     link: 'https://bodefavour.github.io/Harmony-Hub-web/',
   },
   {
