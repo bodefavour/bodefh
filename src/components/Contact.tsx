@@ -13,8 +13,7 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // You can use an API like EmailJS to handle form submissions here
+    // You can remove this if you don't want to log data to the console.
     console.log('Form Data Submitted: ', formData);
   };
 
@@ -22,7 +21,12 @@ const Contact: React.FC = () => {
     <section className="py-16 bg-white" id="contact">
       <div className="container mx-auto px-6 lg:px-20">
         <h2 className="text-4xl font-bold text-center mb-6">Contact Me</h2>
-        <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">
+        <form
+          action="https://formspree.io/f/xkgnwlyp" // Replace with your actual Formspree ID
+          method="POST"
+          onSubmit={handleSubmit}
+          className="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg"
+        >
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
               Name
