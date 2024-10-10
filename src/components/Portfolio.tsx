@@ -3,16 +3,19 @@ import React from 'react';
 const projects = [
   {
     title: 'Harmony Hub',
+    image: require('../assets/images/HarmonyHub.png'),
     description: 'A Christian music streaming platform built with Flutterflow and Firebase.',
     link: 'https://bodefavour.github.io/Harmony-Hub-web/',
   },
   {
     title: 'Custom Printf',
+    image: require('../assets/images/Printf.png'),
     description: 'Building a Custom Printf function in C programming language',
     link: 'https://github.com/joshybobo/printf',
   },
 {
     title: '𝗣𝗿𝗼𝗷𝗲𝗰𝘁: 𝗔𝗶𝗿𝗯𝗻𝗯 𝗖𝗹𝗼𝗻𝗲 | 𝗔𝗟𝗫 𝗦𝗼𝗳𝘁𝘄𝗮𝗿𝗲 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴 𝗣𝗿𝗼𝗴𝗿𝗮𝗺:',
+  image: require('../assets/images/Airbnb.png'),
     description: 'Building a Clone of the popular Airbnb Website page and adding basic functionalities ',
     link: 'https://github.com/bodefavour/AirBnB_clone',
   },
@@ -30,6 +33,11 @@ const Portfolio: React.FC = () => {
               key={index}
               className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
             >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-64 object-cover rounded-lg mb-4"
+              />
               <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
               <p className="text-gray-700 mb-4">{project.description}</p>
               <a
