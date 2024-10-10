@@ -31,7 +31,7 @@ const Portfolio: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+              className="bg-gray-100 p-6 rounded-lg shadow-md animate-fadeIn hover:shadow-lg transition duration-300"
             >
               <img
                 src={project.image}
@@ -42,6 +42,8 @@ const Portfolio: React.FC = () => {
               <p className="text-gray-700 mb-4">{project.description}</p>
               <a
                 href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-500 font-semibold hover:underline"
               >
                 View Project
