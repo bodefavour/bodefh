@@ -1,11 +1,11 @@
 import React from 'react';
 
 const skills = [
-  { name: 'JavaScript', level: 'Advanced' },{ name: 'C', level: 'Advanced' },
-{ name: 'Python', level: 'Advanced' },
-  { name: 'TypeScript', level: 'Intermediate' },
-  { name: 'React', level: 'Advanced' },
-  { name: 'Tailw.CSS', level: 'Intermediate' },
+  { name: 'JavaScript', image: '../assets/images/JavaScript.png', level: 'Advanced' },{ name: 'C', level: 'Advanced' },
+{ name: 'Python', image: '../assets/images/Python.png', level: 'Advanced' },
+  { name: 'TypeScript', image: '../assets/images/typescript.png', level: 'Intermediate' },
+  { name: 'React', image: '../assets/images/React.png', level: 'Advanced' },
+  { name: 'Tailw.CSS', image: '../assets/images/Tailwind.png', level: 'Intermediate' },
   // Add more skills here
 ];
 
