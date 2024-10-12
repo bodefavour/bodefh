@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
