@@ -1,4 +1,5 @@
 import { ReportHandler } from 'web-vitals';
+import { Analytics } from "@vercel/analytics/react"
 
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
