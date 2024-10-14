@@ -41,11 +41,12 @@ const Portfolio: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 ${
-                hoveredProject === index ? 'scale-110' : 'scale-100'
+              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 ${
+                hoveredProject === index ? 'scale-110 h-auto' : 'h-72'
               }`}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
+              style={{ maxHeight: hoveredProject === index ? '500px' : '300px' }} // Adjust height on hover
             >
               {/* Display first image by default */}
               <img
@@ -63,7 +64,7 @@ const Portfolio: React.FC = () => {
 
               {/* Expanded content on hover */}
               {hoveredProject === index && (
-                <div className="absolute inset-0 bg-white bg-opacity-90 p-4 overflow-hidden">
+                <div className="absolute inset-0 bg-white bg-opacity-90 p-4 overflow-auto">
                   {/* Carousel for project images */}
                   <Swiper
                     spaceBetween={10}
