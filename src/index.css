@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* In your global CSS or relevant file */
+@import 'swiper/swiper-bundle.css';
 
 body {
   margin: 0;
