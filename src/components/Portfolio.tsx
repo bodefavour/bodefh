@@ -41,18 +41,27 @@ const Portfolio: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 ${
-                hoveredProject === index ? 'scale-110 h-auto' : 'h-72'
+              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 ${
+                hoveredProject === index ? 'fixed inset-0 z-50 scale-125 p-10 bg-white rounded-lg overflow-visible' : 'scale-100 h-72'
               }`}
+              style={{
+                maxWidth: hoveredProject === index ? '80vw' : '100%',
+                maxHeight: hoveredProject === index ? '90vh' : '300px',
+                margin: hoveredProject === index ? 'auto' : '0',
+              }}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
-              style={{ maxHeight: hoveredProject === index ? '500px' : '300px' }} // Adjust height on hover
             >
+              {/* Overlay background on hover */}
+              {hoveredProject === index && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-40" />
+              )}
+
               {/* Display first image by default */}
               <img
                 src={project.images[0]}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className={`w-full h-48 object-cover ${hoveredProject === index ? 'h-64' : ''}`}
               />
 
               {/* Project name */}
@@ -64,7 +73,7 @@ const Portfolio: React.FC = () => {
 
               {/* Expanded content on hover */}
               {hoveredProject === index && (
-                <div className="absolute inset-0 bg-white bg-opacity-90 p-4 overflow-auto">
+                <div className="absolute inset-0 z-50 bg-white p-6 rounded-lg">
                   {/* Carousel for project images */}
                   <Swiper
                     spaceBetween={10}
