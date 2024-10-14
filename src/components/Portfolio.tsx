@@ -23,36 +23,71 @@ const projects = [
 ];
 
 const Portfolio: React.FC = () => {
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
   return (
-    <section className="py-16 bg-white" id="portfolio">
+    <section className="py-16 bg-gray-100" id="portfolio">
       <div className="container mx-auto px-6 lg:px-20">
-        <h2 className="text-4xl font-bold text-center mb-6">View My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-4xl font-bold text-center mb-6">Portfolio</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 ${
+                hoveredProject === index ? 'scale-110' : 'scale-100'
+              }`}
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
+              {/* Display first image by default */}
               <img
-                src={project.image}
+                src={project.images[0]}
                 alt={project.title}
-                className="w-full h-64 object-cover rounded-lg mb-4"
+                className="w-full h-48 object-cover"
               />
-              <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-              <p className="text-gray-700 mb-4">{project.description}</p>
-{/* Hover effect to show more info */}
-              <div className="absolute inset-0 bg-black bg-opacity-75 flex flex-col items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-lg mb-4">{project.description}</p>
-                <a
-                  href={project.link}
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project
-                </a>
+
+              {/* Project name */}
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2 text-center">
+                  {project.title}
+                </h3>
               </div>
+
+              {/* Expanded content on hover */}
+              {hoveredProject === index && (
+                <div className="absolute inset-0 bg-white bg-opacity-90 p-4 overflow-hidden">
+                  {/* Carousel for project images */}
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    className="h-64"
+                  >
+                    {project.images.map((image, idx) => (
+                      <SwiperSlide key={idx}>
+                        <img
+                          src={image}
+                          alt={`Project ${index} - Slide ${idx}`}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+
+                  {/* Expanded Project Information */}
+                  <div className="text-center mt-4">
+                    <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
+                    <p className="text-gray-700">{project.description}</p>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-4"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
