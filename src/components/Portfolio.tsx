@@ -42,7 +42,7 @@ const Portfolio: React.FC = () => {
               <p className="text-gray-700 mb-4">{project.description}</p>
 {/* Hover effect to show more info */}
               <div className="absolute inset-0 bg-black bg-opacity-75 flex flex-col items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
+                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                 <p className="text-lg mb-4">{project.description}</p>
                 <a
                   href={project.link}
