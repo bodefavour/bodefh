@@ -96,4 +96,12 @@ const Portfolio: React.FC = () => {
       </div>
     </div>
   )}
-</div>)
+</div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Portfolio;
