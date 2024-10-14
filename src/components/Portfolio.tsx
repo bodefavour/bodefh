@@ -40,78 +40,60 @@ const Portfolio: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
-              key={index}
-              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 ${
-                hoveredProject === index ? 'fixed inset-0 z-50 scale-125 p-10 bg-white rounded-lg overflow-visible' : 'scale-100 h-72'
-              }`}
-              style={{
-                maxWidth: hoveredProject === index ? '80vw' : '100%',
-                maxHeight: hoveredProject === index ? '90vh' : '300px',
-                margin: hoveredProject === index ? 'auto' : '0',
-              }}
-              onMouseEnter={() => setHoveredProject(index)}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
-              {/* Overlay background on hover */}
-              {hoveredProject === index && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 z-40" />
-              )}
+  key={index}
+  className={`relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 ${
+    hoveredProject === index ? 'scale-150 z-50' : 'scale-100'
+  } ${hoveredProject === index ? 'fixed inset-0 bg-black bg-opacity-70' : ''}`} 
+  onMouseEnter={() => setHoveredProject(index)}
+  onMouseLeave={() => setHoveredProject(null)}
+>
+  {/* Display first image by default */}
+  <img
+    src={project.images[0]}
+    alt={project.title}
+    className="w-full h-48 object-cover"
+  />
 
-              {/* Display first image by default */}
-              <img
-                src={project.images[0]}
-                alt={project.title}
-                className={`w-full h-48 object-cover ${hoveredProject === index ? 'h-64' : ''}`}
-              />
+  {/* Project name */}
+  <div className="p-4">
+    <h3 className="text-xl font-bold mb-2 text-center">
+      {project.title}
+    </h3>
+  </div>
 
-              {/* Project name */}
-              <div className="p-4">
-                <h3 className="text-xl font-bold mb-2 text-center">
-                  {project.title}
-                </h3>
-              </div>
+  {/* Expanded content on hover */}
+  {hoveredProject === index && (
+    <div className="absolute inset-0 bg-white p-8 shadow-lg max-w-lg mx-auto overflow-auto rounded-lg">
+      {/* Carousel for project images */}
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        className="h-64"
+      >
+        {project.images.map((image, idx) => (
+          <SwiperSlide key={idx}>
+            <img
+              src={image}
+              alt={`Project ${index} - Slide ${idx}`}
+              className="w-full h-full object-cover rounded-lg"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-              {/* Expanded content on hover */}
-              {hoveredProject === index && (
-                <div className="absolute inset-0 z-50 bg-white p-6 rounded-lg">
-                  {/* Carousel for project images */}
-                  <Swiper
-                    spaceBetween={10}
-                    slidesPerView={1}
-                    className="h-64"
-                  >
-                    {project.images.map((image, idx) => (
-                      <SwiperSlide key={idx}>
-                        <img
-                          src={image}
-                          alt={`Project ${index} - Slide ${idx}`}
-                          className="w-full h-full object-cover rounded-lg"
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-
-                  {/* Expanded Project Information */}
-                  <div className="text-center mt-4">
-                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-gray-700">{project.description}</p>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-4"
-                    >
-                      View Project
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+      {/* Expanded Project Information */}
+      <div className="text-center mt-4">
+        <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+        <p className="text-gray-700">{project.description}</p>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-4"
+        >
+          View Project
+        </a>
       </div>
-    </section>
-  );
-};
-
-export default Portfolio;
+    </div>
+  )}
+</div>
