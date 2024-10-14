@@ -5,19 +5,19 @@ import 'swiper/swiper-bundle.css';
 const projects = [
   {
     title: 'Harmony Hub',
-    image: require('../assets/images/HarmonyHub.png'),
+    images: require('../assets/images/HarmonyHub.png'),
     description: 'Developed Harmony Hub, a Christian music streaming mobile app using Flutter and Dart. The app provides users with a variety of Christian songs to stream, organized by genre and artist. You can download the app from the Harmony Hub Landing Page, which includes the app’s download link and additional information about the app features.',
     link: 'https://bodefavour.github.io/Harmony-Hub-web/',
   },
   {
     title: 'Custom Printf',
-    image: require('../assets/images/Printf.png'),
+    images: require('../assets/images/Printf.png'),
     description: 'Collaborated in a group of two to build a custom implementation of the printf function in C prog. language. This project involved a deep understanding of variadic functions, format specifiers, and buffer management. It was an exciting challenge to replicate the behavior of the standard printf while ensuring memory efficiency and compatibility with different data types.',
     link: 'https://github.com/joshybobo/printf',
   },
 {
     title: '𝗣𝗿𝗼𝗷𝗲𝗰𝘁: 𝗔𝗶𝗿𝗯𝗻𝗯 𝗖𝗹𝗼𝗻𝗲 | 𝗔𝗟𝗫 𝗦𝗼𝗳𝘁𝘄𝗮𝗿𝗲 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴 𝗣𝗿𝗼𝗴𝗿𝗮𝗺:',
-  image: require('../assets/images/Airbnb.png'),
+  images: require('../assets/images/Airbnb.png'),
     description: 'Built a fully functional clone of the popular Airbnb website. The project includes advanced UI/UX elements, responsive layouts, interactive components, and a focus on mimicking the user experience of the original site. It was a solo project that helped enhance skills in React, TailwindCSS, and building scalable front-end web applications',
     link: 'https://github.com/bodefavour/AirBnB_clone',
   },
