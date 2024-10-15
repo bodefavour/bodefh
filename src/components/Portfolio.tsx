@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import '../styles.css'; // Ensure to include the necessary Swiper styles
+import '../index.css'; // Ensure to include the necessary Swiper styles
 
 const projects = [
   {
