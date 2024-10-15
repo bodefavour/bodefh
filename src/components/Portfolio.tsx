@@ -1,30 +1,25 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import '../styles.css'; // Ensure to include the necessary Swiper styles
 
 const projects = [
   {
     title: 'Harmony Hub',
-    images: [
-      require('../assets/images/HarmonyHub.png'), // Include more images if needed
-    ],
+    images: require('../assets/images/HarmonyHub.png'),
     description: 'Developed Harmony Hub, a Christian music streaming mobile app using Flutter and Dart. The app provides users with a variety of Christian songs to stream, organized by genre and artist. You can download the app from the Harmony Hub Landing Page, which includes the app’s download link and additional information about the app features.',
     link: 'https://bodefavour.github.io/Harmony-Hub-web/',
   },
   {
     title: 'Custom Printf',
-    images: [
-      require('../assets/images/Printf.png'),
-    ],
-    description: 'Collaborated in a group of two to build a custom implementation of the printf function in C prog. language. This project involved a deep understanding of variadic functions, format specifiers, and buffer management. It was an exciting challenge to replicate the behavior of the standard printf while ensuring memory efficiency and compatibility with different data types.',
+    images: require('../assets/images/Printf.png'),
+    description: 'Collaborated in a group of two to build a custom implementation of the printf function in C. This project involved a deep understanding of variadic functions, format specifiers, and buffer management.',
     link: 'https://github.com/joshybobo/printf',
   },
   {
-    title: '𝗣𝗿𝗼𝗷𝗲𝗰𝘁: 𝗔𝗶𝗿𝗯𝗻𝗯 𝗖𝗹𝗼𝗻𝗲 | 𝗔𝗟𝗫 𝗦𝗼𝗳𝘁𝘄𝗮𝗿𝗲 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴 𝗣𝗿𝗼𝗴𝗿𝗮𝗺:',
-    images: [
-      require('../assets/images/Airbnb.png'),
-    ],
-    description: 'Built a fully functional clone of the popular Airbnb website. The project includes advanced UI/UX elements, responsive layouts, interactive components, and a focus on mimicking the user experience of the original site. It was a solo project that helped enhance skills in React, TailwindCSS, and building scalable front-end web applications',
+    title: 'Airbnb Clone',
+    images: require('../assets/images/Airbnb.png'),
+    description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
     link: 'https://github.com/bodefavour/AirBnB_clone',
   },
   // Add more projects here
@@ -40,67 +35,62 @@ const Portfolio: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
-  key={index}
-  className={`relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 ${
-    hoveredProject === index ? 'scale-125 z-50 fixed inset-0 m-auto max-w-screen-md h-auto bg-white p-6 shadow-2xl' : 'scale-100'
-  } ${hoveredProject === index ? 'fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center' : ''}`}
-  onMouseEnter={() => setHoveredProject(index)}
-  onMouseLeave={() => setHoveredProject(null)}
->
-  {/* Display first image by default */}
-  <img
-    src={project.images[0]}
-    alt={project.title}
-    className={`w-full ${hoveredProject === index ? 'h-64' : 'h-48'} object-cover rounded-lg`}
-  />
+              key={index}
+              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 ${
+                hoveredProject === index ? 'transform scale-125 z-10' : 'scale-100'
+              }`}
+              style={
+                hoveredProject === index
+                  ? { maxWidth: '80vw', height: '60vh', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }
+                  : {}
+              }
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              {/* Display first image by default */}
+              <img
+                src={project.images}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
 
-  {/* Project name */}
-  <div className="p-4">
-    <h3 className="text-xl font-bold mb-2 text-center">
-      {project.title}
-    </h3>
-  </div>
+              {/* Project name */}
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2 text-center">
+                  {project.title}
+                </h3>
+              </div>
 
-  {/* Expanded content on hover */}
-  {hoveredProject === index && (
-    <div className="absolute inset-0 bg-white p-8 shadow-lg max-w-lg mx-auto overflow-hidden rounded-lg">
-      {/* Carousel for project images */}
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={1}
-        className="h-64"
-      >
-        {project.images.map((image, idx) => (
-          <SwiperSlide key={idx}>
-            <img
-              src={image}
-              alt={`Project ${index} - Slide ${idx}`}
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              {/* Expanded content on hover */}
+              {hoveredProject === index && (
+                <div className="absolute inset-0 bg-white bg-opacity-95 p-4 rounded-lg overflow-y-auto">
+                  {/* Carousel for project images */}
+                  <Swiper spaceBetween={10} slidesPerView={1} className="h-64">
+                    <SwiperSlide>
+                      <img
+                        src={project.images}
+                        alt={project.title}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
 
-      {/* Expanded Project Information */}
-      <div className="text-center mt-4">
-        <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-700 text-sm lg:text-base">
-          {project.description} <br />
-          <span className="font-bold">Languages used:</span> [C, Python, JavaScript] <br />
-          <span className="font-bold">Time Frame:</span> [Insert Time Frame Here]
-        </p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-4"
-        >
-          View Project
-        </a>
-      </div>
-    </div>
-  )}
-</div>
+                  {/* Expanded Project Information */}
+                  <div className="text-center mt-4">
+                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-700">{project.description}</p>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-4"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>
