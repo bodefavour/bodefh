@@ -37,7 +37,9 @@ const Portfolio: React.FC = () => {
             <div
               key={index}
               className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform ${
-                hoveredProject === index ? 'scale-150 z-10 max-w-screen-md md:max-w-screen-lg' : 'scale-100'
+  hoveredProject === index
+    ? 'scale-150 z-10 max-w-screen-sm max-h-screen-sm md:max-w-screen-lg md:max-h-screen-lg'
+    : 'scale-100'
               }`}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
