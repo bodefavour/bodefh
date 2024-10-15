@@ -37,7 +37,7 @@ const Portfolio: React.FC = () => {
             <div
               key={index}
               className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform ${
-                hoveredProject === index ? 'scale-150 z-10' : 'scale-100'
+                hoveredProject === index ? 'scale-150 z-10 max-w-screen-md md:max-w-screen-lg' : 'scale-100'
               }`}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
@@ -47,7 +47,7 @@ const Portfolio: React.FC = () => {
                 <img
                   src={project.images}
                   alt={project.title}
-                  className="w-full h-64 object-contain p-4" // Added padding so the image stays inside the card without zooming
+                  className="w-full h-72 object-contain p-4" // Added padding so the image stays inside the card without zooming
                 />
               </div>
 
