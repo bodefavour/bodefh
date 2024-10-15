@@ -49,7 +49,7 @@ const Portfolio: React.FC = () => {
                 <img
                   src={project.images}
                   alt={project.title}
-                  className="w-full h-72 object-contain p-4" // Added padding so the image stays inside the card without zooming
+                  className="w-full h-80 object-contain p-4" // Added padding so the image stays inside the card without zooming
                 />
               </div>
 
