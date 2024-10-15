@@ -36,63 +36,66 @@ const Portfolio: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 ${
-                hoveredProject === index ? 'transform scale-125 z-10' : 'scale-100'
-              }`}
-              style={
-                hoveredProject === index
-                  ? { maxWidth: '80vw', height: '60vh', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }
-                  : {}
-              }
-              onMouseEnter={() => setHoveredProject(index)}
-              onMouseLeave={() => setHoveredProject(null)}
+              className="relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105"
+              onClick={() => setHoveredProject(index)}
             >
-              {/* Display first image by default */}
               <img
                 src={project.images}
                 alt={project.title}
                 className="w-full h-48 object-cover"
               />
-
-              {/* Project name */}
               <div className="p-4">
-                <h3 className="text-xl font-bold mb-2 text-center">
-                  {project.title}
-                </h3>
+                <h3 className="text-xl font-bold mb-2 text-center">{project.title}</h3>
               </div>
-
-              {/* Expanded content on hover */}
-              {hoveredProject === index && (
-                <div className="absolute inset-0 bg-white bg-opacity-95 p-4 rounded-lg overflow-y-auto">
-                  {/* Carousel for project images */}
-                  <Swiper spaceBetween={10} slidesPerView={1} className="h-64">
-                    <SwiperSlide>
-                      <img
-                        src={project.images}
-                        alt={project.title}
-                        className="w-full h-full object-cover rounded-lg"
-                      />
-                    </SwiperSlide>
-                  </Swiper>
-
-                  {/* Expanded Project Information */}
-                  <div className="text-center mt-4">
-                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-gray-700">{project.description}</p>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-4"
-                    >
-                      View Project
-                    </a>
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>
+
+        {/* Modal to display zoomed-in project details */}
+        {hoveredProject !== null && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+            onClick={() => setHoveredProject(null)} // Close modal when clicking outside the content
+          >
+            <div
+              className="bg-white p-6 rounded-lg max-w-4xl mx-auto relative"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the content
+            >
+              {/* Carousel for project images */}
+              <Swiper spaceBetween={10} slidesPerView={1} className="h-64">
+                <SwiperSlide>
+                  <img
+                    src={projects[hoveredProject].images}
+                    alt={projects[hoveredProject].title}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SwiperSlide>
+              </Swiper>
+
+              {/* Expanded Project Information */}
+              <div className="text-center mt-4">
+                <h3 className="text-2xl font-bold mb-2">{projects[hoveredProject].title}</h3>
+                <p className="text-gray-700">{projects[hoveredProject].description}</p>
+                <a
+                  href={projects[hoveredProject].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-4"
+                >
+                  View Project
+                </a>
+              </div>
+
+              {/* Close button */}
+              <button
+                className="absolute top-4 right-4 bg-red-500 text-white rounded-full px-4 py-2"
+                onClick={() => setHoveredProject(null)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
