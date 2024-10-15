@@ -42,8 +42,8 @@ const Portfolio: React.FC = () => {
             <div
   key={index}
   className={`relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 ${
-    hoveredProject === index ? 'scale-150 z-50' : 'scale-100'
-  } ${hoveredProject === index ? 'fixed inset-0 bg-black bg-opacity-70' : ''}`} 
+    hoveredProject === index ? 'scale-125 z-50 fixed inset-0 m-auto max-w-screen-md h-auto bg-white p-6 shadow-2xl' : 'scale-100'
+  } ${hoveredProject === index ? 'fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center' : ''}`}
   onMouseEnter={() => setHoveredProject(index)}
   onMouseLeave={() => setHoveredProject(null)}
 >
@@ -51,7 +51,7 @@ const Portfolio: React.FC = () => {
   <img
     src={project.images[0]}
     alt={project.title}
-    className="w-full h-48 object-cover"
+    className={`w-full ${hoveredProject === index ? 'h-64' : 'h-48'} object-cover rounded-lg`}
   />
 
   {/* Project name */}
@@ -63,7 +63,7 @@ const Portfolio: React.FC = () => {
 
   {/* Expanded content on hover */}
   {hoveredProject === index && (
-    <div className="absolute inset-0 bg-white p-8 shadow-lg max-w-lg mx-auto overflow-auto rounded-lg">
+    <div className="absolute inset-0 bg-white p-8 shadow-lg max-w-lg mx-auto overflow-hidden rounded-lg">
       {/* Carousel for project images */}
       <Swiper
         spaceBetween={10}
@@ -84,7 +84,11 @@ const Portfolio: React.FC = () => {
       {/* Expanded Project Information */}
       <div className="text-center mt-4">
         <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-700">{project.description}</p>
+        <p className="text-gray-700 text-sm lg:text-base">
+          {project.description} <br />
+          <span className="font-bold">Languages used:</span> [C, Python, JavaScript] <br />
+          <span className="font-bold">Time Frame:</span> [Insert Time Frame Here]
+        </p>
         <a
           href={project.link}
           target="_blank"
