@@ -22,6 +22,24 @@ const projects = [
     description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
     link: 'https://github.com/bodefavour/AirBnB_clone',
   },
+{
+    title: 'Airbnb Clone',
+    images: require('../assets/images/Airbnb.png'),
+    description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
+    link: 'https://github.com/bodefavour/AirBnB_clone',
+  },
+{
+    title: 'Airbnb Clone',
+    images: require('../assets/images/Airbnb.png'),
+    description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
+    link: 'https://github.com/bodefavour/AirBnB_clone',
+  },
+{
+    title: 'Airbnb Clone',
+    images: require('../assets/images/Airbnb.png'),
+    description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
+    link: 'https://github.com/bodefavour/AirBnB_clone',
+  },
   // Add more projects here
 ];
 
