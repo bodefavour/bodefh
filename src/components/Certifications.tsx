@@ -7,6 +7,7 @@ const certificationsData = [
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
+    image: 'https://via.placeholder.com/150', // Placeholder for the certificate image
   },
   {
     title: 'Meta Certified Digital Marketing Associate',
@@ -14,6 +15,7 @@ const certificationsData = [
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
+    image: 'https://via.placeholder.com/150', // Placeholder for the certificate image
   },
   // Add more certificates similarly
 ];
@@ -41,6 +43,7 @@ const Certifications = () => {
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'center',
   };
 
   const cardTitleStyle: React.CSSProperties = {
@@ -54,12 +57,21 @@ const Certifications = () => {
     color: '#666',
   };
 
+  const imageStyle: React.CSSProperties = {
+    width: '100px',
+    height: '100px',
+    objectFit: 'cover',
+    borderRadius: '50%',
+    marginBottom: '15px',
+  };
+
   return (
     <section id="certifications" style={sectionStyle}>
       <h2 style={titleStyle}>Certifications</h2>
       <div style={gridStyle}>
         {certificationsData.map((cert, index) => (
           <div key={index} style={cardStyle}>
+            <img src={cert.image} alt={`${cert.title} Image`} style={imageStyle} />
             <h3 style={cardTitleStyle}>{cert.title}</h3>
             <p>Issued by: {cert.issuedBy}</p>
             <p>Date: {cert.date}</p>
