@@ -58,8 +58,8 @@ const Certifications: React.FC = () => {
               <img
                 src={cert.image}
                 alt={cert.title}
-                className="w-64 h-48 object-contain"  {/* Use object-contain to keep the image within boundaries */}
-    style={{ maxWidth: '100%', maxHeight: '100%' }}  {/* Ensure the image doesn't overflow */}
+                className="w-64 h-48 object-contain"  // Use object-contain to keep the image within boundaries //
+    style={{ maxWidth: '100%', maxHeight: '100%' }}  //Ensure the image doesn't overflow//
               />
             </div>
             <h3 className="text-xl font-semibold">{cert.title}</h3>
