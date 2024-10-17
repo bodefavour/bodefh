@@ -39,7 +39,7 @@ const Portfolio: React.FC = () => {
               className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform ${
   hoveredProject === index
     ? 'scale-95 md:scale-100 z-10 max-w-xs md:max-w-screen-md'
-    : 'scale-90'
+    : 'scale-70'
               }`}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
