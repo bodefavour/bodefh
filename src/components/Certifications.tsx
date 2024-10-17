@@ -15,7 +15,7 @@ const certificationsData = [
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
-    image: '../assets/images/MetaCDM.png', // Placeholder for the certificate image
+    image: require ('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
   },
 {
     title: 'Meta Certified Digital Marketing Associate',
@@ -23,7 +23,7 @@ const certificationsData = [
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
-    image: '../assets/images/MetaCDM.png', // Placeholder for the certificate image
+    image: require('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
   },
 {
     title: 'Meta Certified Digital Marketing Associate',
@@ -31,7 +31,7 @@ const certificationsData = [
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
-    image: '../assets/images/MetaCDM.png', // Placeholder for the certificate image
+    image: require('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
   },
 {
     title: 'Meta Certified Digital Marketing Associate',
@@ -39,7 +39,7 @@ const certificationsData = [
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
-    image: '../assets/images/MetaCDM.png', // Placeholder for the certificate image
+    image: require('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
   },
   // Add more certificates similarly
 ];
@@ -58,7 +58,8 @@ const Certifications: React.FC = () => {
               <img
                 src={cert.image}
                 alt={cert.title}
-                className="w-48 h-48 object-cover"
+                className="w-64 h-48 object-contain"  {/* Use object-contain to keep the image within boundaries */}
+    style={{ maxWidth: '100%', maxHeight: '100%' }}  {/* Ensure the image doesn't overflow */}
               />
             </div>
             <h3 className="text-xl font-semibold">{cert.title}</h3>
