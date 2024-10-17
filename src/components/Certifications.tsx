@@ -49,7 +49,7 @@ const Certifications: React.FC = () => {
     <section className="py-16 bg-gray-100 text-center">
       <h2 className="text-4xl font-bold mb-8">Certifications</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {Certifications.map((cert, index) => (
+        {certificationsData.map((cert, index) => (
           <div
             key={index}
             className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col items-center"
