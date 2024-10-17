@@ -31,7 +31,8 @@ const Portfolio: React.FC = () => {
   return (
     <section className="py-16 bg-gray-100" id="portfolio">
       <div className="container mx-auto px-6 lg:px-20">
-        <h2 className="text-4xl font-bold text-center mb-6">Portfolio</h2>
+        <h2 className="text-4xl font-bold text-center mb-6">View My Works</h2>
+        <h3 className="text-2xl font-light text-center mb-6">(Hover with Keyboard/ Click on Mobile) to view more details</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
@@ -39,7 +40,7 @@ const Portfolio: React.FC = () => {
               className={`relative bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform ${
   hoveredProject === index
     ? 'scale-70 md:scale-90 z-10 max-w-xs md:max-w-screen-md'
-    : 'scale-90'
+    : 'scale-70'
               }`}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
