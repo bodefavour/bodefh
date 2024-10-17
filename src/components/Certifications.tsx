@@ -44,67 +44,35 @@ const certificationsData = [
   // Add more certificates similarly
 ];
 
-const Certifications = () => {
-  const sectionStyle: React.CSSProperties = {
-    padding: '40px',
-    backgroundColor: '#f9f9f9',
-  };
-
-  const titleStyle: React.CSSProperties = {
-    fontSize: '28px',
-    marginBottom: '20px',
-    textAlign: 'center',
-  };
-
-  const gridStyle: React.CSSProperties = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '20px',
-  };
-
-  const cardStyle: React.CSSProperties = {
-    backgroundColor: '#fff',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    textAlign: 'center',
-  };
-
-  const cardTitleStyle: React.CSSProperties = {
-    fontSize: '20px',
-    marginBottom: '10px',
-  };
-
-  const descriptionStyle: React.CSSProperties = {
-    marginTop: '10px',
-    fontSize: '14px',
-    color: '#666',
-  };
-
-  const imageStyle: React.CSSProperties = {
-    width: '200px',
-    height: '200px',
-    objectFit: 'contain',
-    borderRadius: '0',
-    marginBottom: '15px',
-    textAlign: 'center',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', /* Optional: Adds shadow for better visuals */
-  };
-
+const Certifications: React.FC = () => {
   return (
-    <section id="certifications" style={sectionStyle}>
-      <h2 style={titleStyle}>Certifications</h2>
-      <div style={gridStyle}>
-        {certificationsData.map((cert, index) => (
-          <div key={index} style={cardStyle}>
-            <img src={cert.image} alt={`${cert.title} Image`} style={imageStyle} />
-            <h3 style={cardTitleStyle}>{cert.title}</h3>
-            <p>Issued by: {cert.issuedBy}</p>
-            <p>Date: {cert.date}</p>
-            <a href={cert.link} target="_blank" rel="noopener noreferrer">
+    <section className="py-16 bg-gray-100 text-center">
+      <h2 className="text-4xl font-bold mb-8">Certifications</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {certifications.map((cert, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col items-center"
+          >
+            <div className="w-full h-48 mb-4 overflow-hidden flex justify-center items-center">
+              <img
+                src={cert.image}
+                alt={cert.title}
+                className="w-48 h-48 object-cover"
+              />
+            </div>
+            <h3 className="text-xl font-semibold">{cert.title}</h3>
+            <p className="text-gray-600">Issued By: {cert.issuedBy}</p>
+            <p className="text-gray-500">Issued: {cert.date}</p>
+            <p className="text-gray-700 mb-4">{cert.description}</p>
+            <a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 font-semibold hover:underline"
+            >
               View Certificate
             </a>
-            <p style={descriptionStyle}>{cert.description}</p>
           </div>
         ))}
       </div>
