@@ -20,6 +20,7 @@ const App: React.FC = () => {
       <Skills />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 };
