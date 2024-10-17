@@ -71,7 +71,7 @@ const certificationsData = [
     date: 'November 2023',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Credential ID: BC/UT/121',
-    image: require('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
+    image: require('../assets/images/image_bdd8dd24-3e16-4b97-84c9-80443f2b1bdf20241017_112618.png'), // Placeholder for the certificate image
   },
   // Add more certificates similarly
 ];
