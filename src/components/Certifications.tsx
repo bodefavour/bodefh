@@ -7,7 +7,7 @@ const certificationsData = [
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
-    image: require('../assets/images/MetaSM.png'), // Placeholder for the certificate image
+    image: require('../assets/images/MetaSMM.png'), // Placeholder for the certificate image
   },
   {
     title: 'Meta Certified Digital Marketing Associate',
