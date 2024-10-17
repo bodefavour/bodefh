@@ -82,8 +82,8 @@ const Certifications = () => {
   };
 
   const imageStyle: React.CSSProperties = {
-    width: '100px',
-    height: '100px',
+    width: '300px',
+    height: '300px',
     objectFit: 'cover',
     borderRadius: '0',
     marginBottom: '15px',
