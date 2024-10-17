@@ -18,27 +18,59 @@ const certificationsData = [
     image: require ('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
   },
 {
-    title: 'Meta Certified Digital Marketing Associate',
+    title: 'Measure and Optimize Social Media Marketing Campaigns',
     issuedBy: 'Meta',
     date: 'August 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
-    image: require('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
+    image: require('../assets/images/MOSMMC.png'), // Placeholder for the certificate image
   },
 {
-    title: 'Meta Certified Digital Marketing Associate',
+    title: 'Fundamentals Of Social Media Marketing',
     issuedBy: 'Meta',
-    date: 'August 2024',
+    date: 'July 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
-    image: require('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
+    image: require('../assets/images/FOSMM.png'), // Placeholder for the certificate image
   },
 {
-    title: 'Meta Certified Digital Marketing Associate',
+    title: 'Advanced Social Media Strategy Training and Certification',
     issuedBy: 'Meta',
-    date: 'August 2024',
+    date: 'June 2024',
     link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
     description: 'Placeholder description here.',
+    image: require('../assets/images/MetaSMM.png'), // Placeholder for the certificate image
+  },
+{
+    title: 'Introduction To Social Media Marketing ',
+    issuedBy: 'Meta',
+    date: 'June 2024',
+    link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
+    description: 'Placeholder description here.',
+    image: require('../assets/images/IOSMM.png'), // Placeholder for the certificate image
+  },
+{
+    title: 'Advertising With Meta',
+    issuedBy: 'Meta',
+    date: 'June 2024',
+    link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
+    description: 'Placeholder description here.',
+    image: require('../assets/images/AWM.png'), // Placeholder for the certificate image
+  },
+{
+    title: 'Postman API Fundamentals Students Expert',
+    issuedBy: 'Postman',
+    date: 'August 2024',
+    link: 'https://api.badgr.io/public/assertions/IWV3XB4_R3m6-zd5f26EOQ?identity__email=bodefavour%40gmail.com',
+    description: 'Placeholder description here.',
+    image: require('../assets/images/Postman - Postman API Fundamentals Student Expert - 2024-05-04.png'), // Placeholder for the certificate image
+  },
+{
+    title: 'Binance Utiva Certified Cloud Developer',
+    issuedBy: 'Meta',
+    date: 'November 2023',
+    link: 'https://www.credly.com/badges/6c657f72-5fce-4fb5-b741-61b7a75902bc/linked_in_profile',
+    description: 'Credential ID: BC/UT/121',
     image: require('../assets/images/MetaCDM.png'), // Placeholder for the certificate image
   },
   // Add more certificates similarly
