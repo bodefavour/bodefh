@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           href="#portfolio"
           className="bg-white text-blue-500 font-semibold px-6 py-3 rounded-lg transition hover:bg-blue-500 hover:text-white"
         >
-          View My Work
+          My Portfolio 
         </a>
       </div>
           </div>
