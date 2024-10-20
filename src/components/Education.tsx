@@ -7,7 +7,7 @@ const educationData = [
     startDate: 'November 2022',
     endDate: 'Present',
     keyCourses: ['Anatomy', 'Physiology', 'Biochemistry', 'Pharmacology'],
-    description: 'Placeholder description for Nursing Science at UNIOSUN.',
+    description: 'Placeholder description for Nursing Science at UNIOSUN, Osun State University.',
   },
   {
     institution: 'Holberton School / ALX',
