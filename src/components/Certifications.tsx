@@ -79,7 +79,7 @@ const certificationsData = [
     date: 'November 2024',
     link: 'https://certs.hashgraphdev.com/97d840b8-108a-499d-a1e5-ae11b06e8fac.pdf',
     description: 'Credential ID: 97d840b8-108a-499d-a1e5-ae11b06e8fac',
-    image: require('../assets/images/'Hashgraph.jpg'),
+    image: require('../assets/images/Hashgraph.png'),
   },
 {
     title: 'Binance Utiva Certified Cloud Developer',
