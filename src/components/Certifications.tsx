@@ -2,6 +2,14 @@ import React from 'react';
 
 const certificationsData = [
   {
+    title: 'BSc. Software Engineer',
+    issuedBy: 'Holberton School/ALX',
+    date: 'January 2025',
+    link: 'https://drive.google.com/file/d/1gldtH7eqE2IrgSCwFS1ZGq4tJwINQBgw/view?usp=drivesdk',
+    description: 'Credential ID: ALX_SE',
+    image: require('../assets/images/ALX_SE.png'),
+  },
+  {
     title: 'Meta Social Media Marketing Professional Certificate',
     issuedBy: 'Meta',
     date: 'August 2024',
