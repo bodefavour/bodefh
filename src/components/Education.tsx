@@ -7,7 +7,7 @@ const educationData = [
     startDate: 'November 2022',
     endDate: 'Present',
     keyCourses: ['Anatomy', 'Physiology', 'Biochemistry', 'Pharmacology'],
-    //description: 'Placeholder description for Nursing Science at UNIOSUN, Osun State University.',
+    description: 'Placeholder description for Nursing Science at UNIOSUN, Osun State University.',
   },
   {
     institution: 'Holberton School / ALX',
@@ -15,7 +15,7 @@ const educationData = [
     startDate: 'July 2023',
     endDate: 'December 2024',
     keyCourses: ['C Programming', 'Data Structures', 'Algorithms', 'Back-End Development'],
-    //description: 'Placeholder description for ALX Software Engineering Program.',
+    description: 'Placeholder description for ALX Software Engineering Program.',
   },
   {
     institution: 'Hashgraph',
@@ -23,7 +23,7 @@ const educationData = [
     startDate: 'May 2024',
     endDate: 'December 2024',
     keyCourses: ['JavaScript', 'Hashgraph Blockchain Development', 'Algorithms', 'Back-End Development'],
-    //description: 'Placeholder description for ALX Software Engineering Program.',
+    description: 'Placeholder description for ALX Software Engineering Program.',
   },
   {
     institution: 'Meta',
@@ -31,7 +31,7 @@ const educationData = [
     startDate: 'March 2024',
     endDate: 'August 2024',
     keyCourses: ['Fundamentals Of Social Advertising', 'Advanced Social Media Strategy Training and Certification', 'Advertising With Meta', 'Social Media Marketing'],
-    //description: 'Placeholder description for ALX Software Engineering Program.',
+    description: 'Placeholder description for ALX Software Engineering Program.',
   },
   // Add more educational experiences similarly
 ];
