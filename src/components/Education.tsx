@@ -27,7 +27,7 @@ const educationData = [
   },
   {
     institution: 'Meta',
-    degree: 'Associate's Degree, Meta Digital Marketing Professional Certificate',
+    degree: 'Associate's Degree Meta Digital Marketing Professional Certificate',
     startDate: 'March 2024',
     endDate: 'August 2024',
     keyCourses: ['Fundamentals Of Social Advertising', 'Advanced Social Media Strategy Training and Certification', 'Advertising With Meta', 'Social Media Marketing'],
