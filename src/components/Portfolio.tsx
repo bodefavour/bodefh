@@ -11,6 +11,12 @@ const projects = [
     link: 'https://www.boshan.co/',
   },
 {
+  title: 'UNIOSUN Hostel Management System',
+  images: require('../assets/images/hmsr.png'),
+  description: `A mini real estate side project to serve as Osun State University Hostels Management System, easing booking of hostels by students (Still in Development)`,
+  link: 'https://github.com/bodefavour/hostel-management2',
+},
+{
     title: 'Bella Books',
     images: require('../assets/images/Bellabooks.png'),
     description: 'Built a fully functional e-commerce book store with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
