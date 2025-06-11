@@ -5,6 +5,49 @@ import '../index.css'; // Ensure to include the necessary Swiper styles
 
 const projects = [
   {
+    title: 'Boshan',
+    images: require('../assets/images/Boshan.png'),
+    description: 'Built a fully functional website for a cosmetic brand, featuring three different phases; Wait-list phase, pre-launch phase and a launch phase.',
+    link: 'https://www.boshan.co/',
+  },
+{
+    title: 'Bella Books',
+    images: require('../assets/images/Bellabooks.png'),
+    description: 'Built a fully functional e-commerce book store with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
+    link: 'https://shopbellabooks.com/',
+  },
+{
+    title: 'TextCleaner',
+    images: require('../assets/images/Skyflo.png'),
+    description: 'A text editor website build for styling LinkedIn texts (Built as a side project)',
+    link: 'https://textcleaner.net/',
+  },
+{
+    title: 'SokoSQ',
+    images: require('../assets/images/Sokosq.png'),
+    description: 'An AI-Powered Social Commerce
+for SMEs to Transact, that helps create high-converting stores equipped with AI marketing and business tools in 3 minutes. No tech skills needed!',
+    link: 'https://www.sokosq.com/',
+  },
+{
+    title: 'Lacrim World',
+    images: require('../assets/images/Lacrim.png'),
+    description: 'Lacrim World, a fashion brand based in the heart of USA',
+    link: 'https://lwdigitalz.com/',
+  },
+{
+    title: 'Cetrix',
+    images: require('../assets/images/Cetrix.png'),
+    description: 'Manage all your utility bills, airtime, data, TV subscriptions, and more in one secure platform. Save time and money with Cetrix.',
+    link: 'https://www.cetrix.org/',
+  },
+{
+    title: 'Skyflo Mobile App',
+    images: require('../assets/images/Skyflo.png'),
+    description: 'A fashion brand mobile app built using Flutter (Still in Development).',
+    link: 'https://github.com/bodefavour/AirBnB_clone',
+  },
+{
     title: 'Harmony Hub',
     images: require('../assets/images/HarmonyHub.png'),
     description: 'Developed Harmony Hub, a Christian music streaming mobile app using Flutter and Dart. The app provides users with a variety of Christian songs to stream, organized by genre and artist.',
@@ -17,24 +60,6 @@ const projects = [
     link: 'https://github.com/joshybobo/printf',
   },
   {
-    title: 'Airbnb Clone',
-    images: require('../assets/images/Airbnb.png'),
-    description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
-    link: 'https://github.com/bodefavour/AirBnB_clone',
-  },
-{
-    title: 'Airbnb Clone',
-    images: require('../assets/images/Airbnb.png'),
-    description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
-    link: 'https://github.com/bodefavour/AirBnB_clone',
-  },
-{
-    title: 'Airbnb Clone',
-    images: require('../assets/images/Airbnb.png'),
-    description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
-    link: 'https://github.com/bodefavour/AirBnB_clone',
-  },
-{
     title: 'Airbnb Clone',
     images: require('../assets/images/Airbnb.png'),
     description: 'Built a fully functional clone of the popular Airbnb website with advanced UI/UX elements, responsive layouts, and interactive components using React and TailwindCSS.',
