@@ -78,10 +78,10 @@ const Portfolio: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-gray-700" id="portfolio">
+    <section className="py-16 bg-black" id="portfolio">
       <div className="container mx-auto px-6 lg:px-20">
-        <h2 className="text-4xl font-bold text-center mb-6">View My Works</h2>
-        <h3 className="text-2xl font-light text-center mb-6">(Hover with Keyboard/ Click on Mobile) to view more details</h3>
+        <h2 className="text-4xl font-bold text-center text-white mb-6">View My Works</h2>
+        <h3 className="text-2xl font-light text-center text-white mb-6">(Hover with Keyboard/ Click on Mobile) to view more details</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
