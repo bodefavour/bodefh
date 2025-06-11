@@ -78,7 +78,7 @@ const Portfolio: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-gray-100" id="portfolio">
+    <section className="py-16 bg-gray-700" id="portfolio">
       <div className="container mx-auto px-6 lg:px-20">
         <h2 className="text-4xl font-bold text-center mb-6">View My Works</h2>
         <h3 className="text-2xl font-light text-center mb-6">(Hover with Keyboard/ Click on Mobile) to view more details</h3>
