@@ -18,7 +18,7 @@ const projects = [
   },
 {
     title: 'TextCleaner',
-    images: require('../assets/images/Skyflo.png'),
+    images: require('../assets/images/Text.png'),
     description: 'A text editor website build for styling LinkedIn texts (Built as a side project)',
     link: 'https://textcleaner.net/',
   },
