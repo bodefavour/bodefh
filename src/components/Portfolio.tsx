@@ -23,12 +23,12 @@ const projects = [
     link: 'https://textcleaner.net/',
   },
 {
-    title: 'SokoSQ',
-    images: require('../assets/images/Sokosq.png'),
-    description: 'An AI-Powered Social Commerce
-for SMEs to Transact, that helps create high-converting stores equipped with AI marketing and business tools in 3 minutes. No tech skills needed!',
-    link: 'https://www.sokosq.com/',
-  },
+  title: 'SokoSQ',
+  images: require('../assets/images/Sokosq.png'),
+  description: `An AI-Powered Social Commerce
+for SMEs to Transact, that helps create high-converting stores equipped with AI marketing and business tools in 3 minutes. No tech skills needed!`,
+  link: 'https://www.sokosq.com/',
+},
 {
     title: 'Lacrim World',
     images: require('../assets/images/Lacrim.png'),
