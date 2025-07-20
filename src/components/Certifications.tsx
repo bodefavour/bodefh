@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const certificationsData = [
   {
@@ -98,43 +99,153 @@ const certificationsData = [
     image: require('../assets/images/image_bdd8dd24-3e16-4b97-84c9-80443f2b1bdf20241017_112618.png'),
   },
   // Add more certificates similarly
+  // Your existing certifications data array
+  // ...
 ];
 
 const Certifications: React.FC = () => {
+  // Group certifications by issuer for better organization
+  const groupedCertifications = certificationsData.reduce((acc, cert) => {
+    if (!acc[cert.issuedBy]) {
+      acc[cert.issuedBy] = [];
+    }
+    acc[cert.issuedBy].push(cert);
+    return acc;
+  }, {} as Record<string, typeof certificationsData>);
+
   return (
-    <section className="py-16 bg-black text-center">
-<div className="container mx-auto px-6 lg:px-20">
-      <h2 className="text-4xl font-bold mb-8">Certifications</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {certificationsData.map((cert, index) => (
-          <div
-            key={index}
-            className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col items-center"
-          >
-            <div className="w-full h-48 mb-4 overflow-hidden flex justify-center items-center">
-              <img
-                src={cert.image}
-                alt={cert.title}
-                className="w-64 h-48 object-contain"  // Use object-contain to keep the image within boundaries //
-    style={{ maxWidth: '100%', maxHeight: '100%' }}  //Ensure the image doesn't overflow//
-              />
-            </div>
-            <h3 className="text-xl font-semibold">{cert.title}</h3>
-            <p className="text-gray-600">Issued By: {cert.issuedBy}</p>
-            <p className="text-gray-500">Issued: {cert.date}</p>
-            <p className="text-gray-700 mb-4">{cert.description}</p>
-            <a
-              href={cert.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 font-semibold hover:underline"
-            >
-              View Certificate
-            </a>
-          </div>
-        ))}
+    <section className="relative py-20 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden" id="certifications">
+      {/* Techy background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl"></div>
       </div>
-     </div>
+      
+      <div className="container mx-auto px-6 lg:px-20 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            Certifications
+          </h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Validated expertise across software engineering, cloud development, and digital marketing
+          </p>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6"></div>
+        </motion.div>
+
+        {/* Certification Tabs */}
+        <div className="mb-12 flex flex-wrap justify-center gap-2">
+          {Object.keys(groupedCertifications).map((issuer) => (
+            <button
+              key={issuer}
+              className="px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full text-sm text-gray-300 hover:bg-blue-600/20 hover:border-blue-400/30 transition-all"
+            >
+              {issuer}
+            </button>
+          ))}
+        </div>
+
+        {/* Certifications Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {certificationsData.map((cert, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all"
+            >
+              {/* Certification Header */}
+              <div className="p-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 border-b border-gray-700/50">
+                <h3 className="text-xl font-bold text-white">{cert.title}</h3>
+                <p className="text-blue-300 text-sm mt-1">{cert.issuedBy}</p>
+              </div>
+              
+              {/* Certification Body */}
+              <div className="p-6">
+                <div className="flex justify-center mb-4">
+                  <div className="w-full h-48 bg-gray-900/50 rounded-lg flex items-center justify-center p-4">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-center text-sm text-gray-400 mb-4">
+                  <span>Issued: {cert.date}</span>
+                  {cert.description && (
+                    <span className="bg-gray-700/50 px-2 py-1 rounded text-xs">
+                      {cert.description}
+                    </span>
+                  )}
+                </div>
+                
+                <motion.a
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-2 text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium text-white hover:from-blue-500 hover:to-purple-500 transition-all"
+                >
+                  Verify Certificate
+                </motion.a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
+          >
+            <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              {certificationsData.length}+
+            </div>
+            <div className="text-gray-400 mt-2">Certifications</div>
+          </motion.div>
+          
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
+          >
+            <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              {Object.keys(groupedCertifications).length}
+            </div>
+            <div className="text-gray-400 mt-2">Accredited Institutions</div>
+          </motion.div>
+          
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
+          >
+            <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              2+
+            </div>
+            <div className="text-gray-400 mt-2">Technical Domains</div>
+          </motion.div>
+          
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
+          >
+            <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              2+
+            </div>
+            <div className="text-gray-400 mt-2">Marketing Domains</div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 };
