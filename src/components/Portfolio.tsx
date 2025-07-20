@@ -175,7 +175,7 @@ const GitHubIcon = FiGithub as unknown as React.FC<React.SVGProps<SVGSVGElement>
                             className="p-2 bg-gray-700/50 rounded-full hover:bg-blue-600/20 transition-colors"
                             aria-label="GitHub"
                           >
-                            {FiGithub && <FiGithub className="text-gray-300" />}
+                            <GitHubIcon className="text-gray-300" />
                           </a>
                         ) : (
                           <a
