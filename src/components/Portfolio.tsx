@@ -81,6 +81,8 @@ const Portfolio: React.FC = () => {
   // Create project categories
   const categories = ['All', 'Web Development', 'Mobile Apps', 'E-commerce', 'Open Source'];
 
+const GitHubIcon = FiGithub as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+
   return (
     <section className="relative py-20 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden" id="portfolio">
       {/* Techy background elements */}
