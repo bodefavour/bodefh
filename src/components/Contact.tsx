@@ -41,6 +41,11 @@ const Contact: React.FC = () => {
     }
   };
 
+const SendIcon = FiSend as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+const MailIcon = FiMail as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+const MapPinIcon = FiMapPin as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+const PhoneIcon = FiPhone as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+
   return (
     <section className="relative py-20 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden" id="contact">
       {/* Techy background elements */}
@@ -81,7 +86,7 @@ const Contact: React.FC = () => {
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-lg mr-4">
-                    <FiMail className="text-white text-xl" />
+                    <MailIcon className="text-gray-300" />
                   </div>
                   <div>
                     <h4 className="text-gray-400 text-sm font-semibold mb-1">Email</h4>
@@ -93,7 +98,7 @@ const Contact: React.FC = () => {
                 
                 <div className="flex items-start">
                   <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-lg mr-4">
-                    <FiPhone className="text-white text-xl" />
+                    <PhoneIcon className="text-gray-300" />
                   </div>
                   <div>
                     <h4 className="text-gray-400 text-sm font-semibold mb-1">Phone</h4>
@@ -105,7 +110,7 @@ const Contact: React.FC = () => {
                 
                 <div className="flex items-start">
                   <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-lg mr-4">
-                    <FiMapPin className="text-white text-xl" />
+                    <MapPinIcon className="text-gray-300" />
                   </div>
                   <div>
                     <h4 className="text-gray-400 text-sm font-semibold mb-1">Location</h4>
@@ -155,7 +160,7 @@ const Contact: React.FC = () => {
               {submitSuccess ? (
                 <div className="text-center py-12">
                   <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <FiSend className="text-green-400 text-3xl" />
+                    <SendIcon className="text-gray-300" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
                   <p className="text-gray-400 mb-6">Thank you for reaching out. I'll get back to you soon.</p>
@@ -235,7 +240,7 @@ const Contact: React.FC = () => {
                       </>
                     ) : (
                       <>
-                        <FiSend className="text-lg" />
+                        <SendIcon className="text-gray-300" />
                         Send Message
                       </>
                     )}
