@@ -23,8 +23,8 @@ const Skills: React.FC = () => {
     {
       name: 'Programming Languages',
       skills: skills.filter(skill => 
-        ['JavaScript', 'C', 'Python', 'TypeScript', 'Dart'].includes(skill.name)
-    }),
+        ['JavaScript', 'C', 'Python', 'TypeScript', 'Dart'].includes(skill.name))
+    },
     {
       name: 'Frontend Development',
       skills: skills.filter(skill => 
