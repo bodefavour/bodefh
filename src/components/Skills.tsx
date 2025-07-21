@@ -14,11 +14,9 @@ const skills = [
   { name: 'Git', image: require('../assets/images/Git.png'), level: 85 },
   { name: 'Hedera Hashgraph', image: require('../assets/images/Hashgraph.png'), level: 70 },
   { name: 'Digital Marketing', image: require('../assets/images/DigitalMarketing.png'), level: 85 },
-  // Add more skills here
 ];
 
 const Skills: React.FC = () => {
-  // Group skills by category
   const skillCategories = [
     {
       name: 'Programming Languages',
