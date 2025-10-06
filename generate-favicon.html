@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator - HOPE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .canvas-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #06b6d4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .download-btn:hover {
+            background: #0891b2;
+        }
+        .instructions {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        h1 { color: #333; }
+        h2 { color: #06b6d4; }
+    </style>
+</head>
+<body>
+    <h1>🎨 HOPE Favicon Generator</h1>
+    <p>Your custom favicons with "HOPE" text on black background</p>
+    
+    <div class="canvas-container">
+        <h2>Preview & Download</h2>
+        <div>
+            <canvas id="canvas16" width="16" height="16"></canvas>
+            <span>16x16</span>
+        </div>
+        <div>
+            <canvas id="canvas32" width="32" height="32"></canvas>
+            <span>32x32</span>
+        </div>
+        <div>
+            <canvas id="canvas180" width="180" height="180"></canvas>
+            <span>180x180 (Apple Touch)</span>
+        </div>
+        <div>
+            <canvas id="canvas192" width="192" height="192"></canvas>
+            <span>192x192 (Android)</span>
+        </div>
+        <div>
+            <canvas id="canvas512" width="512" height="512"></canvas>
+            <span>512x512 (PWA)</span>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button class="download-btn" onclick="downloadAll()">📥 Download All Favicons</button>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>📋 Installation Instructions</h2>
+        <ol>
+            <li>Click "Download All Favicons" button above</li>
+            <li>Save the downloaded images to your <code>/public</code> folder:
+                <ul>
+                    <li><code>favicon-16x16.png</code></li>
+                    <li><code>favicon-32x32.png</code></li>
+                    <li><code>apple-touch-icon.png</code> (180x180)</li>
+                    <li><code>logo192.png</code> (192x192)</li>
+                    <li><code>logo512.png</code> (512x512)</li>
+                </ul>
+            </li>
+            <li>For favicon.ico, you can use an online converter at <a href="https://convertio.co/png-ico/" target="_blank">convertio.co</a> to convert the 32x32 image</li>
+            <li>Replace the existing files in your <code>public</code> folder</li>
+            <li>Clear browser cache and refresh to see changes</li>
+        </ol>
+    </div>
+
+    <script>
+        function drawFavicon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Black background
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, size, size);
+            
+            // White text
+            ctx.fillStyle = '#FFFFFF';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Adjust font size based on canvas size
+            let fontSize;
+            if (size <= 16) {
+                fontSize = 10;
+                ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+                ctx.fillText('H', size/2, size/2);
+            } else if (size <= 32) {
+                fontSize = 18;
+                ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+                ctx.fillText('HOPE', size/2, size/2);
+            } else {
+                fontSize = Math.floor(size / 5.5);
+                ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+                ctx.fillText('HOPE', size/2, size/2);
+            }
+        }
+
+        function downloadCanvas(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        function downloadAll() {
+            setTimeout(() => downloadCanvas('canvas16', 'favicon-16x16.png'), 100);
+            setTimeout(() => downloadCanvas('canvas32', 'favicon-32x32.png'), 300);
+            setTimeout(() => downloadCanvas('canvas180', 'apple-touch-icon.png'), 500);
+            setTimeout(() => downloadCanvas('canvas192', 'logo192.png'), 700);
+            setTimeout(() => downloadCanvas('canvas512', 'logo512.png'), 900);
+            
+            alert('Downloading all favicons! Check your Downloads folder.\n\nFiles:\n- favicon-16x16.png\n- favicon-32x32.png\n- apple-touch-icon.png\n- logo192.png\n- logo512.png\n\nDon\'t forget to convert favicon-32x32.png to favicon.ico!');
+        }
+
+        // Draw all favicons on page load
+        window.onload = function() {
+            drawFavicon('canvas16', 16);
+            drawFavicon('canvas32', 32);
+            drawFavicon('canvas180', 180);
+            drawFavicon('canvas192', 192);
+            drawFavicon('canvas512', 512);
+        };
+    </script>
+</body>
+</html>

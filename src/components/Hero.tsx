@@ -115,13 +115,13 @@ const Hero: React.FC = () => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#portfolio"
+                href="mailto:bodefavour@gmail.com?subject=Hi%20Favour!%20Let's%20Work%20Together&body=Hey%20Favour,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20I%20am%20willing%20to%20work%20with%20you.%0D%0A%0D%0A"
                 className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 text-center"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  View My Work
+                  Hire Me
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </span>
               </motion.a>
@@ -129,10 +129,10 @@ const Hero: React.FC = () => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#contact"
+                href="#portfolio"
                 className="px-8 py-4 glass glass-hover rounded-xl font-semibold text-white transition-all duration-300 text-center"
               >
-                Let's Connect
+                View My Work
               </motion.a>
             </motion.div>
 
