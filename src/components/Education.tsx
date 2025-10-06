@@ -3,40 +3,49 @@ import { motion } from 'framer-motion';
 
 const educationData = [
   {
-    institution: 'Osun State University, UNIOSUN, Osogbo Osun State',
+    institution: 'Osun State University (UNIOSUN)',
+    location: 'Osogbo, Osun State',
     degree: 'B.NSc. in Nursing Science',
     startDate: 'November 2022',
     endDate: 'Present',
     keyCourses: ['Anatomy', 'Physiology', 'Biochemistry', 'Pharmacology'],
-    description: 'Placeholder description for Nursing Science at UNIOSUN, Osun State University.',
+    description: 'Pursuing comprehensive healthcare education with focus on patient care, medical procedures, and health sciences.',
+    icon: '🏥',
+    color: 'from-emerald-500 to-cyan-500'
   },
   {
-    institution: 'Holberton School / ALX',
-    degree: 'Software Engineering',
+    institution: 'ALX Africa / Holberton School',
+    location: 'Remote',
+    degree: 'Software Engineering Certificate',
     startDate: 'July 2023',
     endDate: 'December 2024',
-    keyCourses: ['C Programming', 'Data Structures', 'Algorithms', 'Back-End Development'],
-    description: 'Placeholder description for ALX Software Engineering Program.',
+    keyCourses: ['C Programming', 'Data Structures', 'Algorithms', 'System Engineering', 'DevOps'],
+    description: 'Intensive software engineering program covering low-level and high-level programming, system design, and modern development practices.',
+    icon: '👨‍💻',
+    color: 'from-cyan-500 to-blue-500'
   },
   {
-    institution: 'Hashgraph',
+    institution: 'Hedera Hashgraph',
+    location: 'Remote',
     degree: 'Certified Hashgraph Blockchain Developer',
     startDate: 'May 2024',
     endDate: 'December 2024',
-    keyCourses: ['JavaScript', 'Hashgraph Blockchain Development', 'Algorithms', 'Back-End Development'],
-    description: 'Placeholder description for ALX Software Engineering Program.',
+    keyCourses: ['Blockchain Fundamentals', 'Hedera SDK', 'Smart Contracts', 'DApp Development'],
+    description: 'Specialized training in distributed ledger technology and decentralized application development on Hedera network.',
+    icon: '⛓️',
+    color: 'from-purple-500 to-pink-500'
   },
   {
     institution: 'Meta',
-    degree: "Associate's Degree Meta Digital Marketing Professional Certificate",
+    location: 'Remote',
+    degree: 'Digital Marketing Professional Certificate',
     startDate: 'March 2024',
     endDate: 'August 2024',
-    keyCourses: ['Fundamentals Of Social Advertising', 'Advanced Social Media Strategy Training and Certification', 'Advertising With Meta', 'Social Media Marketing'],
-    description: 'Placeholder description for ALX Software Engineering Program.',
+    keyCourses: ['Social Media Advertising', 'Marketing Analytics', 'Meta Ads Manager', 'Content Strategy'],
+    description: 'Comprehensive digital marketing certification covering social media strategy, paid advertising, and campaign optimization.',
+    icon: '📱',
+    color: 'from-blue-500 to-purple-500'
   },
-  // Add more educational experiences similarly
-  // Your existing education data
-  // ...
 ];
 
 const Education = () => {
