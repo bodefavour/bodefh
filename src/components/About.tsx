@@ -29,10 +29,10 @@ const About: React.FC = () => {
     <section className="relative py-20 lg:py-32 bg-dark-300 overflow-hidden" id="about">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-mesh"></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -65,20 +65,20 @@ const About: React.FC = () => {
             <div className="prose prose-invert max-w-none">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
                 I'm <span className="text-cyan-400 font-semibold">Favour Bode</span>, a versatile{' '}
-                <span className="text-gradient-premium font-semibold">Software Engineer</span> with a passion for creating 
+                <span className="text-gradient-premium font-semibold">Software Engineer</span> with a passion for creating
                 innovative solutions that bridge technology and business goals.
               </p>
-              
+
               <p className="text-lg text-gray-400 leading-relaxed mt-4">
                 With expertise spanning <span className="text-cyan-400">cloud development</span>, <span className="text-blue-400">full-stack engineering</span>, and{' '}
-                <span className="text-purple-400">mobile app development</span>, I specialize in building high-performance applications using cutting-edge 
+                <span className="text-purple-400">mobile app development</span>, I specialize in building high-performance applications using cutting-edge
                 technologies like <strong className="text-white">Flutter</strong>, <strong className="text-white">React</strong>, and{' '}
                 <strong className="text-white">Dart</strong>.
               </p>
 
               <p className="text-lg text-gray-400 leading-relaxed mt-4">
-                My unique blend of technical expertise and <span className="text-emerald-400 font-semibold">digital marketing</span> acumen 
-                allows me to not only build exceptional products but also ensure they reach and resonate with the right audience. 
+                My unique blend of technical expertise and <span className="text-emerald-400 font-semibold">digital marketing</span> acumen
+                allows me to not only build exceptional products but also ensure they reach and resonate with the right audience.
                 I'm currently exploring the exciting world of <span className="text-purple-400">decentralized applications</span> with{' '}
                 <strong className="text-white">Hedera Hashgraph</strong>.
               </p>
@@ -157,9 +157,9 @@ const About: React.FC = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
             {[
-              'React', 'TypeScript', 'Flutter', 'Dart', 'Node.js', 
+              'React', 'TypeScript', 'Flutter', 'Dart', 'Node.js',
               'Python', 'C', 'Tailwind CSS', 'Cloud Computing',
-              'Hedera Hashgraph', 'Git', 'Digital Marketing', 
+              'Hedera Hashgraph', 'Git', 'Digital Marketing',
               'Social Media', 'Content Strategy', 'SEO'
             ].map((tech, index) => (
               <motion.span

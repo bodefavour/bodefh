@@ -56,9 +56,9 @@ const Education = () => {
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 lg:px-20 relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -78,7 +78,7 @@ const Education = () => {
         <div className="relative">
           {/* Timeline line */}
           <div className="absolute left-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500 transform -translate-x-1/2 hidden md:block"></div>
-          
+
           {/* Education Items */}
           <div className="space-y-12 md:space-y-0">
             {educationData.map((edu, index) => (
@@ -92,7 +92,7 @@ const Education = () => {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 top-6 w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 hidden md:block"></div>
-                
+
                 {/* Content */}
                 <div className={`w-full md:w-1/2 p-6 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
                   <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all h-full">
@@ -108,12 +108,12 @@ const Education = () => {
                         <p className="text-blue-300">{edu.degree}</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center text-sm text-gray-400 mb-4">
                       <span className="mr-2">📅</span>
                       <span>{edu.startDate} - {edu.endDate}</span>
                     </div>
-                    
+
                     <div className="mb-4">
                       <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Courses:</h4>
                       <div className="flex flex-wrap gap-2">
@@ -124,11 +124,11 @@ const Education = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-400 text-sm">{edu.description}</p>
                   </div>
                 </div>
-                
+
                 {/* Empty space for alignment */}
                 <div className="w-1/2 hidden md:block"></div>
               </motion.div>
@@ -138,7 +138,7 @@ const Education = () => {
 
         {/* Stats */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
           >
@@ -147,8 +147,8 @@ const Education = () => {
             </div>
             <div className="text-gray-400 mt-2">Institutions</div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
           >
@@ -157,8 +157,8 @@ const Education = () => {
             </div>
             <div className="text-gray-400 mt-2">Technical Degrees</div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
           >
@@ -167,8 +167,8 @@ const Education = () => {
             </div>
             <div className="text-gray-400 mt-2">Healthcare Degree</div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 backdrop-blur-sm"
           >
