@@ -6,10 +6,6 @@
 @import 'swiper/swiper-bundle.css';
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-[#0A0A0F] text-gray-100;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
