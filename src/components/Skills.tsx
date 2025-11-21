@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import * as FaIcons from 'react-icons/fa';
 
 const skills = [
   { name: 'JavaScript', image: require('../assets/images/JavaScript.png'), level: 90, category: 'Languages' },
@@ -17,14 +18,27 @@ const skills = [
 ];
 
 const Skills: React.FC = () => {
+  const getCategoryIcon = (name: string) => {
+    switch(name) {
+      case 'Languages': return React.createElement(FaIcons.FaCode, { className: "text-white" });
+      case 'Frontend': return React.createElement(FaIcons.FaPalette, { className: "text-white" });
+      case 'Mobile': return React.createElement(FaIcons.FaMobileAlt, { className: "text-white" });
+      case 'Backend': return React.createElement(FaIcons.FaCogs, { className: "text-white" });
+      case 'Tools': return React.createElement(FaIcons.FaTools, { className: "text-white" });
+      case 'Blockchain': return React.createElement(FaIcons.FaLink, { className: "text-white" });
+      case 'Marketing': return React.createElement(FaIcons.FaChartLine, { className: "text-white" });
+      default: return null;
+    }
+  };
+
   const categories = [
-    { name: 'Languages', icon: '💻', color: 'from-cyan-500 to-blue-500' },
-    { name: 'Frontend', icon: '🎨', color: 'from-blue-500 to-purple-500' },
-    { name: 'Mobile', icon: '📱', color: 'from-purple-500 to-pink-500' },
-    { name: 'Backend', icon: '⚙️', color: 'from-emerald-500 to-cyan-500' },
-    { name: 'Tools', icon: '🛠️', color: 'from-orange-500 to-red-500' },
-    { name: 'Blockchain', icon: '⛓️', color: 'from-yellow-500 to-orange-500' },
-    { name: 'Marketing', icon: '📈', color: 'from-pink-500 to-rose-500' },
+    { name: 'Languages', color: 'from-cyan-500 to-blue-500' },
+    { name: 'Frontend', color: 'from-blue-500 to-purple-500' },
+    { name: 'Mobile', color: 'from-purple-500 to-pink-500' },
+    { name: 'Backend', color: 'from-emerald-500 to-cyan-500' },
+    { name: 'Tools', color: 'from-orange-500 to-red-500' },
+    { name: 'Blockchain', color: 'from-yellow-500 to-orange-500' },
+    { name: 'Marketing', color: 'from-pink-500 to-rose-500' },
   ];
 
   return (
@@ -80,7 +94,7 @@ const Skills: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-r ${category.color} flex items-center justify-center text-2xl sm:text-3xl shadow-lg`}
                   >
-                    {category.icon}
+                    {getCategoryIcon(category.name)}
                   </motion.div>
                   <div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-white">{category.name}</h3>
@@ -107,7 +121,8 @@ const Skills: React.FC = () => {
                           <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-white/5 rounded-xl flex items-center justify-center overflow-hidden">
                             <img 
                               src={skill.image} 
-                              alt={skill.name} 
+                              alt={skill.name}
+                              loading="lazy"
                               className="w-10 h-10 sm:w-12 sm:h-12 object-contain group-hover:scale-110 transition-transform duration-300"
                             />
                           </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSend, FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import * as FiIcons from 'react-icons/fi';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -41,10 +41,10 @@ const Contact: React.FC = () => {
     }
   };
 
-const SendIcon = FiSend as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
-const MailIcon = FiMail as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
-const MapPinIcon = FiMapPin as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
-const PhoneIcon = FiPhone as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+const SendIcon = FiIcons.FiSend;
+const MailIcon = FiIcons.FiMail;
+const MapPinIcon = FiIcons.FiMapPin;
+const PhoneIcon = FiIcons.FiPhone;
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden" id="contact">
@@ -123,10 +123,19 @@ const PhoneIcon = FiPhone as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
                 <h4 className="text-gray-400 text-sm font-semibold mb-4">Connect with me</h4>
                 <div className="flex gap-4">
                   {[
-                    { name: 'GitHub', url: 'https://github.com/bodefavour', icon: '👨‍💻' },
-                    { name: 'LinkedIn', url: 'https://linkedin.com/in/favour-bode', icon: '💼' },
-                    { name: 'Twitter', url: 'https://twitter.com/favourbode19', icon: '🐦' }
-                  ].map((social, index) => (
+                    { name: 'GitHub', url: 'https://github.com/bodefavour', iconType: 'github' },
+                    { name: 'LinkedIn', url: 'https://linkedin.com/in/favour-bode', iconType: 'linkedin' },
+                    { name: 'Twitter', url: 'https://twitter.com/favourbode19', iconType: 'twitter' }
+                  ].map((social, index) => {
+                    const getSocialIcon = (type: string) => {
+                      switch(type) {
+                        case 'github': return React.createElement(FiIcons.FiGithub, { size: 20 });
+                        case 'linkedin': return React.createElement(FiIcons.FiLinkedin, { size: 20 });
+                        case 'twitter': return React.createElement(FiIcons.FiTwitter, { size: 20 });
+                        default: return null;
+                      }
+                    };
+                    return (
                     <motion.a
                       key={index}
                       whileHover={{ y: -3 }}
@@ -137,9 +146,10 @@ const PhoneIcon = FiPhone as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
                       className="w-12 h-12 flex items-center justify-center bg-gray-700/50 border border-gray-600 rounded-full text-lg hover:bg-blue-600/20 hover:border-blue-400/30 transition-all"
                       aria-label={social.name}
                     >
-                      {social.icon}
+                      {getSocialIcon(social.iconType)}
                     </motion.a>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>

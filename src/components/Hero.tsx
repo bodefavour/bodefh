@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import * as FaIcons from 'react-icons/fa';
 
 const Hero: React.FC = () => {
   return (
@@ -7,34 +8,23 @@ const Hero: React.FC = () => {
       {/* Animated gradient mesh background */}
       <div className="absolute inset-0 bg-gradient-mesh"></div>
 
-      {/* Floating orbs */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Floating orbs - Optimized */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 100, 0],
-            y: [0, -50, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.4, 0.3],
           }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
-            scale: [1.2, 1, 1.2],
-            x: [0, -80, 0],
-            y: [0, 100, 0],
+            scale: [1.1, 1, 1.1],
+            opacity: [0.3, 0.4, 0.3],
           }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, -60, 0],
-            y: [0, 80, 0],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
         />
       </div>
 
@@ -83,7 +73,7 @@ const Hero: React.FC = () => {
             >
               <span className="text-cyan-400 font-semibold">Software Engineer</span> &{' '}
               <span className="text-purple-400 font-semibold">Cloud Developer</span> crafting exceptional digital experiences with a touch of{' '}
-              <span className="text-emerald-400 font-semibold">Digital Marketing</span> magic ✨
+              <span className="text-emerald-400 font-semibold">Digital Marketing</span> magic
             </motion.p>
 
             {/* Stats Bar */}
@@ -191,23 +181,14 @@ const Hero: React.FC = () => {
           >
             <div className="relative">
               {/* Decorative elements */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-20 blur-2xl"
-              />
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-20 blur-2xl" />
 
               {/* Main image container */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                {/* Rotating border */}
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-75"
-                  style={{ padding: '3px' }}
-                >
+                {/* Static border with gradient */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-75 p-[3px]">
                   <div className="w-full h-full rounded-full bg-dark-300" />
-                </motion.div>
+                </div>
 
                 {/* Profile image */}
                 <motion.div
@@ -217,6 +198,7 @@ const Hero: React.FC = () => {
                   <img
                     src={require('../assets/images/Favour.jpg')}
                     alt="Favour Bode"
+                    loading="eager"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/20 to-transparent" />
@@ -224,11 +206,21 @@ const Hero: React.FC = () => {
 
                 {/* Floating tech icons */}
                 {[
-                  { icon: '⚛️', position: 'top-0 right-0', delay: 0 },
-                  { icon: '🎯', position: 'bottom-0 left-0', delay: 0.2 },
-                  { icon: '☁️', position: 'top-1/4 -left-4', delay: 0.4 },
-                  { icon: '📱', position: 'bottom-1/4 -right-4', delay: 0.6 },
-                ].map((item, index) => (
+                  { iconType: 'react', position: 'top-0 right-0', delay: 0 },
+                  { iconType: 'bullseye', position: 'bottom-0 left-0', delay: 0.2 },
+                  { iconType: 'cloud', position: 'top-1/4 -left-4', delay: 0.4 },
+                  { iconType: 'mobile', position: 'bottom-1/4 -right-4', delay: 0.6 },
+                ].map((item, index) => {
+                  const getFloatingIcon = (type: string) => {
+                    switch(type) {
+                      case 'react': return React.createElement(FaIcons.FaReact, { className: "text-cyan-400" });
+                      case 'bullseye': return React.createElement(FaIcons.FaBullseye, { className: "text-purple-400" });
+                      case 'cloud': return React.createElement(FaIcons.FaCloud, { className: "text-blue-400" });
+                      case 'mobile': return React.createElement(FaIcons.FaMobileAlt, { className: "text-emerald-400" });
+                      default: return null;
+                    }
+                  };
+                  return (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0 }}
@@ -237,9 +229,10 @@ const Hero: React.FC = () => {
                     className={`absolute ${item.position} w-12 h-12 glass rounded-full flex items-center justify-center text-2xl animate-float`}
                     style={{ animationDelay: `${item.delay}s` }}
                   >
-                    {item.icon}
+                    {getFloatingIcon(item.iconType)}
                   </motion.div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </motion.div>

@@ -1,29 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import * as FaIcons from 'react-icons/fa';
 
 const About: React.FC = () => {
   const highlights = [
     {
-      icon: '💻',
+      icon: 'laptop',
       title: 'Full-Stack Development',
       description: 'Building scalable applications with React, Flutter, and modern frameworks'
     },
     {
-      icon: '☁️',
+      icon: 'cloud',
       title: 'Cloud Architecture',
       description: 'Designing and deploying cloud-native solutions'
     },
     {
-      icon: '⛓️',
+      icon: 'link',
       title: 'Blockchain Development',
       description: 'Exploring decentralized apps with Hedera Hashgraph'
     },
     {
-      icon: '📈',
+      icon: 'chart',
       title: 'Digital Marketing',
       description: 'Strategic campaigns that drive measurable business growth'
     }
   ];
+
+  const getIcon = (iconType: string) => {
+    const iconProps = { className: '' };
+    switch(iconType) {
+      case 'laptop': return React.createElement(FaIcons.FaLaptopCode, { className: "text-cyan-400" });
+      case 'cloud': return React.createElement(FaIcons.FaCloud, { className: "text-blue-400" });
+      case 'link': return React.createElement(FaIcons.FaLink, { className: "text-purple-400" });
+      case 'chart': return React.createElement(FaIcons.FaChartLine, { className: "text-emerald-400" });
+      default: return null;
+    }
+  };
 
   return (
     <section className="relative py-20 lg:py-32 bg-dark-300 overflow-hidden" id="about">
@@ -131,7 +143,7 @@ const About: React.FC = () => {
                 className="group glass glass-hover p-6 rounded-2xl"
               >
                 <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
+                  {getIcon(item.icon)}
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                   {item.title}

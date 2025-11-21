@@ -174,6 +174,7 @@ const Certifications: React.FC = () => {
                     <img
                       src={cert.image}
                       alt={cert.title}
+                      loading="lazy"
                       className="max-w-full max-h-full object-contain"
                     />
                   </div>

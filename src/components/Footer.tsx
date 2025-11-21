@@ -1,14 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import * as FiIcons from 'react-icons/fi';
+import * as FaIcons from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
+  const getSocialIcon = (iconType: string) => {
+    switch(iconType) {
+      case 'github': return React.createElement(FiIcons.FiGithub, { size: 20 });
+      case 'linkedin': return React.createElement(FiIcons.FiLinkedin, { size: 20 });
+      case 'twitter': return React.createElement(FiIcons.FiTwitter, { size: 20 });
+      case 'email': return React.createElement(FiIcons.FiMail, { size: 20 });
+      default: return null;
+    }
+  };
+  
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/bodefavour', icon: '👨‍💻' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/favour-bode', icon: '💼' },
-    { name: 'Twitter', url: 'https://twitter.com/favourbode19', icon: '🐦' },
-    { name: 'Email', url: 'mailto:bodefavour@gmail.com', icon: '✉️' },
+    { name: 'GitHub', url: 'https://github.com/bodefavour', iconType: 'github' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/favour-bode', iconType: 'linkedin' },
+    { name: 'Twitter', url: 'https://twitter.com/favourbode19', iconType: 'twitter' },
+    { name: 'Email', url: 'mailto:bodefavour@gmail.com', iconType: 'email' },
   ];
 
   return (
@@ -44,7 +56,7 @@ const Footer: React.FC = () => {
                 className="w-12 h-12 flex items-center justify-center bg-gray-800/50 border border-gray-700 rounded-full text-lg hover:bg-blue-600/20 hover:border-blue-400/30 transition-all"
                 aria-label={link.name}
               >
-                {link.icon}
+                {getSocialIcon(link.iconType)}
               </motion.a>
             ))}
           </div>
@@ -63,9 +75,9 @@ const Footer: React.FC = () => {
         {/* Techy divider */}
         <div className="mt-12 pt-6 border-t border-gray-800/50 flex justify-center">
           <div className="text-gray-500 text-sm flex items-center">
-            <span className="mr-2">🚀</span>
+            {React.createElement(FaIcons.FaRocket, { className: "mr-2" })}
             <span>Fueled by innovation and caffeine</span>
-            <span className="ml-2">☕</span>
+            {React.createElement(FaIcons.FaCoffee, { className: "ml-2" })}
           </div>
         </div>
       </div>

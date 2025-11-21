@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import * as FaIcons from 'react-icons/fa';
 
 const educationData = [
   {
@@ -10,7 +11,7 @@ const educationData = [
     endDate: 'Present',
     keyCourses: ['Anatomy', 'Physiology', 'Biochemistry', 'Pharmacology'],
     description: 'Pursuing comprehensive healthcare education with focus on patient care, medical procedures, and health sciences.',
-    icon: '🏥',
+    iconType: 'hospital',
     color: 'from-emerald-500 to-cyan-500'
   },
   {
@@ -21,7 +22,7 @@ const educationData = [
     endDate: 'December 2024',
     keyCourses: ['C Programming', 'Data Structures', 'Algorithms', 'System Engineering', 'DevOps'],
     description: 'Intensive software engineering program covering low-level and high-level programming, system design, and modern development practices.',
-    icon: '👨‍💻',
+    iconType: 'laptop',
     color: 'from-cyan-500 to-blue-500'
   },
   {
@@ -32,7 +33,7 @@ const educationData = [
     endDate: 'December 2024',
     keyCourses: ['Blockchain Fundamentals', 'Hedera SDK', 'Smart Contracts', 'DApp Development'],
     description: 'Specialized training in distributed ledger technology and decentralized application development on Hedera network.',
-    icon: '⛓️',
+    iconType: 'link',
     color: 'from-purple-500 to-pink-500'
   },
   {
@@ -43,10 +44,20 @@ const educationData = [
     endDate: 'August 2024',
     keyCourses: ['Social Media Advertising', 'Marketing Analytics', 'Meta Ads Manager', 'Content Strategy'],
     description: 'Comprehensive digital marketing certification covering social media strategy, paid advertising, and campaign optimization.',
-    icon: '📱',
+    iconType: 'mobile',
     color: 'from-blue-500 to-purple-500'
   },
 ];
+
+const getEducationIcon = (iconType: string) => {
+  switch(iconType) {
+    case 'hospital': return React.createElement(FaIcons.FaHospital, { className: "text-white" });
+    case 'laptop': return React.createElement(FaIcons.FaLaptopCode, { className: "text-white" });
+    case 'link': return React.createElement(FaIcons.FaLink, { className: "text-white" });
+    case 'mobile': return React.createElement(FaIcons.FaMobileAlt, { className: "text-white" });
+    default: return null;
+  }
+};
 
 const Education = () => {
   return (
@@ -98,10 +109,7 @@ const Education = () => {
                   <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all h-full">
                     <div className="flex items-start mb-4">
                       <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-lg mr-4">
-                        {index === 0 && <span className="text-white">🏥</span>}
-                        {index === 1 && <span className="text-white">👨‍💻</span>}
-                        {index === 2 && <span className="text-white">⛓️</span>}
-                        {index === 3 && <span className="text-white">📱</span>}
+                        {getEducationIcon(edu.iconType)}
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white">{edu.institution}</h3>
@@ -110,7 +118,7 @@ const Education = () => {
                     </div>
 
                     <div className="flex items-center text-sm text-gray-400 mb-4">
-                      <span className="mr-2">📅</span>
+                      {React.createElement(FaIcons.FaCalendar, { className: "mr-2" })}
                       <span>{edu.startDate} - {edu.endDate}</span>
                     </div>
 
